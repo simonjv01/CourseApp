@@ -14,8 +14,15 @@ public class CourseController {
     @Autowired
     private CourseRepository courseRepository;
 
-    @GetMapping("/courses")
+    @RequestMapping("/")
+    public String getCourseAppHome() {
+
+        return ("Course App Home");
+    }
+
+    @RequestMapping("/courses")
     public List<Course> getCourses() {
+
         return courseRepository.findAll();
     }
 
